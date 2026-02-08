@@ -196,5 +196,8 @@ resource "aws_instance" "private" {
   tags = {
     Name = "${var.name_prefix}-private-${count.index + 1}"
     Tier = "private"
+    Env = "dev"
+    App = "myapp"
+
   }
 }
