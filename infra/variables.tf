@@ -33,13 +33,11 @@ variable "instance_count" {
   default = 2
 }
 
-# Optional: pin a specific AMI. If empty, we auto-select Amazon Linux 2023.
 variable "ami_id" {
   type    = string
   default = ""
 }
 
-# Optional: allow SSH (not needed if you use SSM). Keep false by default.
 variable "allow_ssh" {
   type    = bool
   default = false
