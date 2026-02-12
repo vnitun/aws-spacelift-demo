@@ -45,5 +45,5 @@ variable "allow_ssh" {
 
 variable "ssh_ingress_cidr" {
   type    = string
-  default = "0.0.0.0/32"
+  default = "0.0.0.0/0"
 }
