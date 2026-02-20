@@ -47,3 +47,13 @@ variable "ssh_ingress_cidr" {
   type    = string
   default = "10.10.2.0/24"
 }
+variable "s3_bucket_name" {
+  description = "Globally unique S3 bucket name"
+  type        = string
+}
+
+variable "s3_force_destroy" {
+  description = "Allow terraform destroy to delete non-empty bucket"
+  type        = bool
+  default     = false
+}

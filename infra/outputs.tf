@@ -17,3 +17,7 @@ output "private_instance_ids" {
 output "private_instance_private_ips" {
   value = [for i in aws_instance.private : i.private_ip]
 }
+
+output "s3_bucket_name" {
+  value = aws_s3_bucket.this.bucket
+}
