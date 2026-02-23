@@ -21,3 +21,6 @@ output "private_instance_private_ips" {
 output "s3_bucket_name" {
   value = aws_s3_bucket.this.bucket
 }
+output "s3_bucket_id" {
+  value = aws_s3_bucket.this.id
+}
