@@ -1,0 +1,20 @@
+- name: Upload File to Terraform Bucket
+  hosts: localhost
+  connection: local
+  tasks:
+    - name: Get Bucket Name from Env
+      set_fact:
+        target_bucket: "{{ lookup('env', 'CREATED_S3_BUCKET_NAME') }}"
+
+    - name: Debug - Show the bucket name
+      debug:
+        msg: "Targeting bucket: {{ target_bucket }}"
+
+    - name: Upload file to S3
+      amazon.aws.s3_object:
+        bucket: "{{ target_bucket }}"
+        object: "uploads/ansible_file.txt"
+        # Points to the file you just created in the root of your repo
+        src: "./spacelift_report.txt"
+        mode: put
+        region: "us-west-2"
